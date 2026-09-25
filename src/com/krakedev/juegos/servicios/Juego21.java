@@ -73,4 +73,16 @@ public class Juego21 {
 			jugador.setPuntajeCartas(suma);
 		}
 	}
+
+	public ArrayList<Jugador> validarGanador() {
+		ArrayList<Jugador> ganadores = new ArrayList<>();
+
+		for (Jugador jugador : jugadores) {
+			if (jugador.getPuntajeCartas() == 21) {
+				ganadores.add(jugador);
+			}
+		}
+
+		return ganadores;
+	}
 }
