@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Jugador {
 	private String nickname;
 	private ArrayList<Carta> cartas = new ArrayList<>();
+	private int puntajeCartas;
 
 	// === CONSTRUCTOR ===
 
@@ -31,6 +32,14 @@ public class Jugador {
 		this.cartas = cartas;
 	}
 
+	public int getPuntajeCartas() {
+		return puntajeCartas;
+	}
+
+	public void setPuntajeCartas(int puntajeCartas) {
+		this.puntajeCartas = puntajeCartas;
+	}
+
 	// === MÉTODOS ===
 
 	public void recibirCarta(Carta carta) {
@@ -38,7 +47,7 @@ public class Jugador {
 	}
 
 	public void imprimir() {
-		System.out.println("Jugador: " + nickname);
+		System.out.println("Jugador: " + nickname + ", Puntaje: " + puntajeCartas);
 		for (Carta carta : cartas) {
 			carta.imprimir();
 		}
