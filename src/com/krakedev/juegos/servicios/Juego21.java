@@ -52,6 +52,12 @@ public class Juego21 {
 		jugadores.add(jugador);
 	}
 
+	public void reiniciarJugadores() {
+		for (Jugador jugador : jugadores) {
+			jugador.reiniciar();
+		}
+	}
+
 	public void repartirCarta(Jugador jugador) {
 		Carta carta = dealer.entregarCarta();
 		jugador.recibirCarta(carta);
@@ -80,6 +86,21 @@ public class Juego21 {
 		for (Jugador jugador : jugadores) {
 			if (jugador.getPuntajeCartas() == 21) {
 				ganadores.add(jugador);
+			}
+		}
+
+		return ganadores;
+	}
+
+	public ArrayList<Jugador> jugar() {
+		ArrayList<Jugador> ganadores = new ArrayList<>();
+
+		for (int i = 0; i < 3; i++) {
+			repartirRonda();
+			ganadores = validarGanador();
+
+			if (ganadores.size() > 0) {
+				break;
 			}
 		}
 

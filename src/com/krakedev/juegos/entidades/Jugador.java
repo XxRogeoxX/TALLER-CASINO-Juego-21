@@ -46,6 +46,11 @@ public class Jugador {
 		cartas.add(carta);
 	}
 
+	public void reiniciar() {
+		cartas.clear();
+		puntajeCartas = 0;
+	}
+
 	public void imprimir() {
 		System.out.println("Jugador: " + nickname + ", Puntaje: " + puntajeCartas);
 		for (Carta carta : cartas) {
