@@ -57,4 +57,15 @@ public class Dealer {
 			carta.imprimir();
 		}
 	}
+
+	public int generarAleatorio(int maximo) {
+		return (int) (Math.random() * (maximo + 1));
+	}
+
+	public Carta entregarCarta() {
+		int posicion = generarAleatorio(naipe.size() - 1);
+		Carta carta = naipe.get(posicion);
+		naipe.remove(posicion);
+		return carta;
+	}
 }
